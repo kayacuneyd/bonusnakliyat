@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bonus Nakliyat - Güvenli ve zamanında nakliye hizmeti. Şehir içi ve şehirler arası taşımacılıkta profesyonel çözümler.">
+    <title>Bonus Nakliyat | Güvenli ve Zamanında Nakliye Hizmeti</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3a8a; /* Prussian Blue / Lacivert */
+            --secondary-color: #f59e0b; /* Turuncu/Amber */
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: #25d366;
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: #20ba5a;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95), rgba(30, 64, 175, 0.9)), 
+                        url('https://picsum.photos/1920/1080?random=1') center/cover;
+            color: var(--white);
+            padding: 8rem 0 6rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero .btn {
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.75rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .about-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--secondary-color);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Testimonials / Trust Section */
+        .testimonials {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-text {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateX(10px);
+        }
+
+        .contact-method-icon {
+            font-size: 2rem;
+        }
+
+        .contact-method-text h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-form {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.9;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px -5px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                🚚 Bonus <span>Nakliyat</span>
+            </div>
+            <div class="nav-cta">
+                <a href="tel:+905001234567" class="btn btn-primary">📞 Hemen Ara</a>
+                <a href="https://wa.me/905001234567" class="btn btn-secondary" target="_blank">💬 WhatsApp</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="animate-in">Güvenli ve Zamanında Nakliye Hizmeti</h1>
+            <p class="animate-in">Şehir içi ve şehirler arası taşımacılıkta profesyonel çözümler. Eşyalarınız bizimle güvende.</p>
+            <div class="hero-cta animate-in">
+                <a href="tel:+905001234567" class="btn btn-primary">📞 Hemen Ara</a>
+                <a href="https://wa.me/905001234567" class="btn btn-secondary" target="_blank">💬 WhatsApp'tan Yaz</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="hakkimizda">
+        <div class="container">
+            <h2 class="section-title">Bonus Nakliyat Hakkında</h2>
+            <p class="section-subtitle">Profesyonel ekibimiz ve modern araç filomuzla taşımacılıkta güvenin adresi</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>10 Yılı Aşkın Tecrübe</h3>
+                    <p>
+                        2013 yılından bu yana eşyalarınızı güvenle taşıyoruz. Evden eve nakliyat, ofis taşımacılığı ve 
+                        şehirler arası nakliye hizmetlerimizle binlerce mutlu müşteriye hizmet verdik.
+                    </p>
+                    <p>
+                        Profesyonel ekibimiz, sigortalı taşımacılık hizmetimiz ve modern araç filomuzla 
+                        eşyalarınız güvende. Montaj-demontaj hizmetimiz ile işinizi kolaylaştırıyoruz.
+                    </p>
+                    <a href="#iletisim" class="btn btn-primary">Teklif Alın</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://picsum.photos/600/400?random=2" alt="Bonus Nakliyat Ekibi">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="hizmetler">
+        <div class="container">
+            <h2 class="section-title">Hizmetlerimiz</h2>
+            <p class="section-subtitle">İhtiyacınıza özel profesyonel taşımacılık çözümleri</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Evden Eve Nakliyat</h3>
+                    <p>
+                        Eşyalarınızı özenle paketliyor, güvenli şekilde taşıyor ve yeni evinizde istediğiniz yere yerleştiriyoruz. 
+                        Sigortalı taşımacılık garantisi.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Ofis Taşımacılığı</h3>
+                    <p>
+                        İş yerinizi minimum kesinti ile taşıyoruz. Hassas ofis ekipmanları, dosya sistemleri ve 
+                        mobilyalarınız profesyonel ekibimizle güvende.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🗺️</div>
+                    <h3>Şehirler Arası Nakliye</h3>
+                    <p>
+                        Türkiye'nin her yerine güvenli taşımacılık. Modern araç filomuz ve deneyimli 
+                        sürücülerimizle eşyalarınız zamanında teslim.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Parça Eşya Taşımacılığı</h3>
+                    <p>
+                        Tek bir eşya veya birkaç parça için ekonomik çözümler. Diğer yüklerle 
+                        konsolide taşıyarak maliyetinizi düşürüyoruz.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Trust Section -->
+    <section class="testimonials" id="referanslar">
+        <div class="container">
+            <h2 class="section-title">Neden Bonus Nakliyat?</h2>
+            <p class="section-subtitle">Rakamlarla başarımız ve müşteri memnuniyetimiz</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-number">500+</div>
+                    <div class="stat-text">Mutlu Müşteri</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🚚</div>
+                    <div class="stat-number">81</div>
+                    <div class="stat-text">İle Hizmet</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-number">10+</div>
+                    <div class="stat-text">Yıllık Tecrübe</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🛡️</div>
+                    <div class="stat-number">%100</div>
+                    <div class="stat-text">Sigortalı Taşıma</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="iletisim">
+        <div class="container">
+            <h2 class="section-title">İletişime Geçin</h2>
+            <p class="section-subtitle">Size en uygun çözümü birlikte bulalım</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Hızlı İletişim</h3>
+                    <div class="contact-methods">
+                        <a href="tel:+905001234567" class="contact-method">
+                            <div class="contact-method-icon">📞</div>
+                            <div class="contact-method-text">
+                                <h4>Telefon</h4>
+                                <p>+90 500 123 45 67</p>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/905001234567" class="contact-method" target="_blank">
+                            <div class="contact-method-icon">💬</div>
+                            <div class="contact-method-text">
+                                <h4>WhatsApp</h4>
+                                <p>Hemen mesaj gönderin</p>
+                            </div>
+                        </a>
+                        <a href="mailto:info@bonusnakliyat.com" class="contact-method">
+                            <div class="contact-method-icon">📧</div>
+                            <div class="contact-method-text">
+                                <h4>E-posta</h4>
+                                <p>info@bonusnakliyat.com</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-group">
+                            <label for="name">Ad Soyad *</label>
+                            <input type="text" id="name" name="name" required placeholder="Adınız ve soyadınız">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="0500 000 00 00">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mesajınız *</label>
+                            <textarea id="message" name="message" required placeholder="Nakliye ihtiyacınız hakkında bize bilgi verin..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary form-submit">📨 Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <span>developed by <a href="http://kayacuneyt.com" target="_blank">Cüneyt Kaya</a> &copy; 2024 Bonus Nakliyat. Tüm hakları saklıdır.</span>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">Güvenli ve profesyonel taşımacılık hizmetleri</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/905001234567" class="whatsapp-float" target="_blank" aria-label="WhatsApp ile iletişime geç">
+        💬
+    </a>
+
+</body>
+</html>
